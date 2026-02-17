@@ -7,20 +7,19 @@ It configures the agent to always preserve its work via git branches, commits, a
 
 1. **Create a new repo** from this template (or fork it).
 2. **Open a conversation** on OpenHands SaaS and select this repo.
-3. The agent will follow the `repo.md` instructions to branch, commit, and push all work.
+3. The agent will follow the `AGENTS.md` instructions to branch, commit, and push all work.
 
 ## File Overview
 
 ```
-.openhands/
-  skills/repo.md   # Agent instructions (always loaded into context)
+AGENTS.md   # Agent instructions (always loaded into context)
 ```
 
 ## How It Works
 
-### Agent Instructions (repo.md)
+### Agent Instructions (AGENTS.md)
 
-The `repo.md` file is automatically loaded into the agent's context at the start of every
+The `AGENTS.md` file is automatically loaded into the agent's context at the start of every
 conversation. It instructs the agent to:
 
 - Create a new branch before making any changes.
@@ -33,6 +32,5 @@ conversation. It instructs the agent to:
 
 ### Adding repo-specific instructions
 
-If individual repos need their own agent instructions, add a `.openhands/skills/repo.md`
-file inside each repo. The agent loads instructions from the selected conversation repo
-automatically.
+If individual repos need their own agent instructions, add an `AGENTS.md` file at the root
+of each repo. The agent loads instructions from the selected conversation repo automatically.

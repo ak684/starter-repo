@@ -1,7 +1,7 @@
 # Agent Instructions
 
 **IMPORTANT: At the very start of every conversation, before doing anything else,
-say exactly: "Hello! repo.md loaded successfully." This confirms these instructions
+say exactly: "Hello! AGENTS.md loaded successfully." This confirms these instructions
 are active.**
 
 You are working in a workspace managed by this orchestration repo.
@@ -67,8 +67,7 @@ The workspace is organized as follows:
 
 ```
 <this-repo>/                    # Workspace root
-  .openhands/                   # OpenHands configuration
-    skills/repo.md              # This file (agent instructions)
+  AGENTS.md                     # This file (agent instructions)
 ```
 
 ## General Guidelines
@@ -76,5 +75,5 @@ The workspace is organized as follows:
 - Read and understand existing code before making changes.
 - Follow existing code style and conventions in each repository.
 - Run any available linters or tests before pushing (check each repo for instructions).
-- If a repo has its own `.openhands/skills/repo.md`, follow those repo-specific
-  instructions in addition to these workspace-level instructions.
+- If a repo has its own `AGENTS.md`, follow those repo-specific instructions
+  in addition to these workspace-level instructions.
