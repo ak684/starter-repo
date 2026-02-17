@@ -4,6 +4,21 @@ You are working in a multi-repository workspace. This is the orchestration repo 
 manages the workspace. The actual project repositories are cloned into subdirectories
 by the setup script.
 
+## CRITICAL FIRST STEP: Run the Setup Script
+
+Before doing ANYTHING else, you MUST run the setup script to clone the project
+repositories into this workspace:
+
+```bash
+cd "$(git rev-parse --show-toplevel)" && bash .openhands/setup.sh
+```
+
+This will read `.openhands/repos.conf` and clone each listed repository.
+Wait for it to complete before proceeding with any task.
+
+If the setup script has already been run (you can see the cloned repo directories),
+skip this step.
+
 ## CRITICAL: Git Workflow — Never Lose Work
 
 You MUST follow this git workflow for EVERY task. No exceptions.
@@ -11,7 +26,7 @@ You MUST follow this git workflow for EVERY task. No exceptions.
 ### Before Making Any Changes
 
 1. **Navigate into the correct repository directory** before running any git commands.
-   Each repo is cloned as a subdirectory of the workspace root.
+   Each repo is cloned as a subdirectory of this workspace.
 
 2. **Create a new branch** from the current branch BEFORE making any changes:
    ```bash
@@ -62,13 +77,13 @@ You MUST follow this git workflow for EVERY task. No exceptions.
 
 ## Workspace Layout
 
-The workspace is organized as follows:
+After setup, the workspace is organized as follows:
 
 ```
-/workspace/                     # Workspace root (this orchestration repo)
+<this-repo>/                    # This orchestration repo (workspace root)
   .openhands/                   # OpenHands configuration
     microagents/repo.md         # This file (agent instructions)
-    setup.sh                    # Clones project repos on startup
+    setup.sh                    # Clones project repos
     repos.conf                  # List of repos to clone
   <repo-1>/                     # First cloned repository
   <repo-2>/                     # Second cloned repository
